@@ -1,0 +1,12 @@
+//create cluster...........................................................................
+kind create cluster --name kind-3node --config kind-3node.yaml --image kindest/node:v1.30.0
+
+👉 It creates a Kubernetes cluster using Kind
+||kindest/node → this is the container image KIND uses for each node
+||v1.30.0 → the version of Kubernetes that runs inside that container
+
+//check status of cluster.........................................................
+kubectl cluster-info
+
+//check nodes of cluster.........................................................
+kubectl get nodes

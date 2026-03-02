@@ -1,0 +1,36 @@
+///Lists all existing KIND clusters on your machine///
+kind get clusters
+
+///Deletes the specified KIND cluster (removes its containers and network)///
+kind delete cluster --name kind-3node
+
+///Shows all Docker images stored locally///
+docker images
+
+>>Look for: 
+kindest/node
+
+>>Remove them: 
+docker rmi kindest/node:v1.30.0
+
+///Deletes all stopped Docker containers///
+docker container prune
+
+///Removes all unused Docker networks.///
+docker network prune
+
+///Deletes all unused Docker images.///
+docker image prune -a
+
+///If you want FULL clean (removes EVERYTHING unused).///
+docker system prune -a --volumes
+
+///Verify Everything is Clean.///
+kind get clusters
+docker ps (to see running containers)
+docker images
+
+📦 Pulls Kubernetes image
+🐳 Creates multiple Docker containers
+🌐 Creates internal network
+🔗 Connects nodes together
