@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replicaset
+spec:
+  replicas: 3     #how many pods we need
+  selector:
+    matchLabels:
+      app: myapp  #pods relevant to the replicaset
+  template:       #blueprint to create a pod
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
