@@ -1,0 +1,16 @@
+> kubectl apply -f service.yml (headless service -> no service ip)
+> kubectl apply -f statefulset.yml (for pods -> persistance storage, stable name)
+> kubectl get pods
+
+|check these pods have persistance storage
+ > kubectl get pvc
+
+|go to web-0 pod
+> kubectl exec -it web-0 -- sh
+> echo "data from web-0" > /usr/share/nginx/html/index.html
+
+|delete that pod
+|check it get re-create as web-0
+|check that file still exist in pod
+
+> kubectl exec -it web-0 -- cat /usr/share/nginx/html/index.html

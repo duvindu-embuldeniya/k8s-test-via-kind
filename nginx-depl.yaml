@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+  annotations:
+    "kubernetes.io/change-cause": "image version changed x99"
+spec:
+  replicas: 5
+  selector: 
+    matchLabels: 
+      app: nginx      # which pods to be managed
+  template:
+    metadata:
+      labels:
+        app: nginx    # Ensures newly created Pods match the selector.
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.27.1
+        ports:
+          - containerPort: 80
