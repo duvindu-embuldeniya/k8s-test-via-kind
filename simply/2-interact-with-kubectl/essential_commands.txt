@@ -24,6 +24,8 @@ kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   37m
 //check the logs of a pod....................................................
 kubectl logs nginx-pod
 
+kubeclt exec -it nginx2 -- /bin/bash
+
 //access a pod (pod's terminal)..............................................
 kubectl exec -it nginx-pod -- /bin/bash
 exit

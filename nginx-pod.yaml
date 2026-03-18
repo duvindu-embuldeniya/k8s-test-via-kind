@@ -3,12 +3,12 @@ kind: Pod
 metadata:
   name: nginx-pod
   labels:
-    app: nginx
+    app: nginx  # match with service template, rs
   annotations:
     description: "nginx pod for learning"
 spec:
   containers: 
-  - image: nginx:1.27.0
+  - image: nginx
     name: nginx-container
     ports:
     - containerPort: 80

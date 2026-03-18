@@ -13,7 +13,7 @@ kubectl expose pod nginx --type=NodePort --port=80
 
 
 kubectl run -it alpine --image=alpine:3.20 sh
-apk --update add curl
+apk --update add curl / kubectl exec -it nginx-pod -- /bin/bash
 curl (Cluster IP + Servica Name):PORT
 
 
@@ -21,13 +21,6 @@ kubectl run django-app --image=duvindune/repo1:v1.0
 kubectl expose pod django-app --type=NodePort --port=8000
 
 
-
-
-//POD WHICH HAS MORE X1 CONTAINER...//
-kubectl logs <pod> 
-
-//POD WHICH HAS MORE THAN X1 CONTAINER...//
-kubectl logs nginx --container=nginx
 
 
 

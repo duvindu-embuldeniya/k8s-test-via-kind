@@ -6,16 +6,16 @@ spec:
   replicas: 3     #how many pods we need
   selector:
     matchLabels:
-      app: myapp  #pods relevant to the replicaset
+      app: myapp  #Which Pods should I manage
   template:       #blueprint to create a pod
     metadata:
       labels:
         app: myapp 
-        # Ensures newly created Pods match the selector.
+        # What labels will new Pods have
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:1.27
         ports:
         - containerPort: 80  # if you plan to access the container 
           # via a Service, you should specify it so the Service knows 
